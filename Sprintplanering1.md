@@ -154,8 +154,8 @@ Som team vill vi bestämma ett tydligt tema och innehåll för quiz-appen så at
 
 # Länkar
 
-- GitHub Issues: [\[insert link\]](https://github.com/ivanabanana/grupp4-agilaprojektmetoder/issues)
-- GitHub Project board: [\[insert link\]](https://github.com/users/ivanabanana/projects/2)
+- GitHub Issues: [\[GitHub Issues\]](https://github.com/ivanabanana/grupp4-agilaprojektmetoder/issues)
+- GitHub Project board: [\[GitHub Project Board\]](https://github.com/users/ivanabanana/projects/2)
 
 ---
 
