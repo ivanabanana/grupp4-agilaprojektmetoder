@@ -2,26 +2,24 @@
 
 ## Mötesinformation
 
-**Datum:** [ÅÅÅÅ-MM-DD]  
-**Tid:** [Start] - [Slut]  
+**Datum:** [2025-12-15]  
+**Tid:** [17:30] - [18:45]  
 **Sprint längd:** 1 vecka  
-**Sprint period:** [Startdatum] till [Slutdatum]  
-**Närvarande:** [Lista alla namn]  
-**Frånvarande:** [Namn + orsak om relevant]  
-**Mötesroll - Anteckningar:** [Vem för anteckningar denna sprint]
+**Sprint period:** [2025-12-15] till [2025-12-19]  
+**Närvarande:** Ivana, Meryam, Sanel, Albrim, Alvina
+**Frånvarande:** Alla närvarande
+**Mötesroll - Anteckningar:** [Tilldelas snart]
 
 ---
 
-## DEL 1: Sprint Mål (10-15 min)
+## DEL 1: Sprint Mål
 
 ### Vad vill vi uppnå denna vecka?
-
-_Skriv EN tydlig mening som beskriver sprintens fokus. Detta ska alla kunna komma ihåg och svara på frågan: "Vad jobbar ni med den här veckan?"_
 
 **Sprint Mål:**
 
 ```
-Exempel: "Skapa en enkel todo-lista där användare kan lägga till och ta bort uppgifter"
+Att sätta upp projektet och skapa en enkel quiz-app där användaren kan se en fråga, välja ett svar och få feedback.
 ```
 
 ### Definition of Done - När är något KLART?
@@ -33,11 +31,11 @@ _Bocka av vad som måste vara uppfyllt innan ni kan säga att något är färdig
 - [ ] Koden är pushad till GitHub
 - [ ] Annan teammedlem har granskat koden (code review)
 - [ ] README eller dokumentation uppdaterad vid behov (inte nödvändigt för denna kurs dock)
-- [ ] [Lägg till era egna kriterier här]
+- [ ] [Ska vi lägga till något mer?]
 
 ---
 
-## DEL 2: Teamets Kapacitet (5-10 min)
+## DEL 2: Teamets Kapacitet
 
 ### Tillgänglighet denna vecka
 
@@ -58,77 +56,126 @@ _Bocka av vad som måste vara uppfyllt innan ni kan säga att något är färdig
 
 ## DEL 3: User Stories & Uppgifter (30-45 min)
 
-### User Story #[Nummer från GitHub]: [Titel]
+# 1. Projektsetup
 
-_Dessa kan även skrivas direkt på GitHub med en länk i detta dokument._
+**Beskrivning:**  
+Som utvecklare vill jag ha ett GitHub-repo med grundstruktur så att vi kan samarbeta effektivt.
 
-**GitHub Issue:** #[nummer] (eller länk)
-**Prioritet:** Hög / Medel / Låg  
-**Story Points / Estimat:** [X poäng eller timmar]
-**Huvudansvarig:** [Namn - personen som äger att detta blir klart]
+**Acceptance Criteria:**
 
-#### Beskrivning
+- Repo skapat
+- README.md finns
+- Alla gruppmedlemmar har access
+- Projektet går att starta lokalt
 
-```
-Som [typ av användare]
-vill jag [handling/funktion]
-så att [nytta/värde]
+**Tasks:**
 
-Exempel:
-Som student
-vill jag kunna lägga till nya todos i listan
-så att jag kan hålla koll på mina uppgifter
-```
+- Skapa GitHub-repo ([insert link])
+- Skapa README ([insert link])
+- Bjuda in gruppmedlemmar
+- Verifiera att projektet startar
 
-#### Acceptanskriterier
+---
 
-_Specifika, testbara krav som måste uppfyllas_
+### 2. Visa quiz-fråga
 
-- [ ] [Kriterium 1 - Var konkret! "Användare kan klicka på 'Lägg till' knapp"]
-- [ ] [Kriterium 2]
-- [ ] [Kriterium 3]
+**Beskrivning:**  
+Som användare vill jag se en quiz-fråga med svarsalternativ så att jag kan delta i quizet.
 
-#### Uppdelning i Tasks
+**Acceptance Criteria:**
 
-_Bryt ner i konkreta arbetsuppgifter på max 2-4 timmar vardera_
+- En fråga visas
+- 2–4 svarsalternativ visas
+- Fråga och svar kan vara hårdkodade
 
-| Task beskrivning                                                 | GitHub Issue | Estimat | Ansvarig | Status |
-| ---------------------------------------------------------------- | ------------ | ------- | -------- | ------ |
-| [Konkret uppgift, t.ex. "Skapa HTML-struktur för todo-formulär"] | #[X]         | [X tim] | [Namn]   | Todo   |
-| [Konkret uppgift]                                                | #[X]         | [X tim] | [Namn]   | Todo   |
-| [Konkret uppgift]                                                | #[X]         | [X tim] | [Namn]   | Todo   |
-| [Konkret uppgift]                                                | #[X]         | [X tim] | [Namn]   | Todo   |
+**Tasks:**
 
-**Beroenden:**
+- Skapa UI för fråga
+- Visa svarsalternativ
+- Testa i webbläsare
 
-- [Finns det något som måste vara klart först?]
-- [Behövs något från annan teammedlem?]
+---
 
-**Risker/Osäkerheter:**
+### 3. Välja svar
 
-- [Något ni är osäkra på hur ni ska lösa?]
-- [Något ni behöver lära er först?]
+**Beskrivning:**  
+Som användare vill jag kunna klicka på ett svar så att jag kan välja mitt alternativ.
 
-_(Upprepa struktur ovan för varje uppgift ni tar in i sprinten)_
+**Acceptance Criteria:**
+
+- Endast ett svar kan väljas
+- Valet markeras visuellt
+
+**Tasks:**
+
+- Implementera klick-hantering
+- Lägg till visuell markering
+- Testa beteendet
+
+---
+
+### 4. Feedback på svar
+
+**Beskrivning:**  
+Som användare vill jag få feedback om mitt svar är rätt eller fel så att jag vet hur det gick.
+
+**Acceptance Criteria:**
+
+- Feedback visas efter svar
+- Feedback är tydlig (text eller färg)
+
+**Tasks:**
+
+- Kontrollera rätt/fel svar
+- Visa feedback
+- Testa flödet
+
+---
+
+### 5. Bestäm tema och innehåll
+
+**Beskrivning:**  
+Som team vill vi bestämma ett tydligt tema och innehåll för quiz-appen så att alla har en gemensam bild av vad vi bygger.
+
+**Acceptance Criteria:**
+
+- Quiz-tema valt (t.ex. allmänbildning, film, musik)
+- Antal frågor bestämt (t.ex. 5–10)
+- Typ av frågor bestämt (multiple choice)
+- Dokumenterat beslut ([insert link])
+
+**Tasks:**
+
+- Brainstorma möjliga teman
+- Diskutera och fatta beslut
+- Dokumentera valt tema och grundidé
+
+---
+
+# Länkar
+
+- GitHub Issues: [\[insert link\]](https://github.com/ivanabanana/grupp4-agilaprojektmetoder/issues)
+- GitHub Project board: [\[insert link\]](https://github.com/users/ivanabanana/projects/2)
 
 ---
 
 ## Identifierade Risker & Blockerare
 
-| Risk/Problem                          | Påverkan (Hög/Medel/Låg) | Vad gör vi åt det?                                         | Ansvarig |
-| ------------------------------------- | ------------------------ | ---------------------------------------------------------- | -------- |
-| [Beskriv risk, t.ex. "Ingen kan GUI"] | [Medel]                  | [Lösning, t.ex. "Sara kollar tutorial, delar med gruppen"] | [Sara]   |
-| [Risk]                                | [Påverkan]               | [Åtgärd]                                                   | [Namn]   |
+| Risk/Problem                        | Påverkan (Hög/Medel/Låg) | Vad gör vi åt det?                                  | Ansvarig |
+| ----------------------------------- | ------------------------ | --------------------------------------------------- | -------- |
+| Ingen har erfarenhet av quiz-appar  | Hög                      | Titta på tutorials, dela kunskap inom gruppen       | [Namn]   |
+| Tidsbrist på grund av andra orsaker | Medel                    | Prioritera uppgifter, kommunicera tidigt om problem | [Namn]   |
+| [Risk]                              | [Påverkan]               | [Åtgärd]                                            | [Namn]   |
 
 ---
 
 ## ACTION ITEMS - Konkreta uppgifter som ska göras NU
 
-| Nr  | Vad ska göras?                                                  | Vem ansvarar? | Deadline     | Status |
-| --- | --------------------------------------------------------------- | ------------- | ------------ | ------ |
-| 1   | [Konkret åtgärd, t.ex. "Skapa alla GitHub issues för sprinten"] | [Namn]        | [Datum, tid] | Todo   |
-| 2   | [Åtgärd]                                                        | [Namn]        | [Datum, tid] | Todo   |
-| 3   | [Åtgärd]                                                        | [Namn]        | [Datum, tid] | Todo   |
+| Nr  | Vad ska göras?                            | Vem ansvarar? | Deadline     | Status |
+| --- | ----------------------------------------- | ------------- | ------------ | ------ |
+| 1   | Skapar upplägg, GitHub repo och README.md | [Ivana]       | [2025-12-15] | Pågår  |
+| 2   | [Åtgärd]                                  | [Namn]        | [Datum, tid] | Todo   |
+| 3   | [Åtgärd]                                  | [Namn]        | [Datum, tid] | Todo   |
 
 **Status:** Todo / Pågår / Klart
 
@@ -138,8 +185,8 @@ _(Upprepa struktur ovan för varje uppgift ni tar in i sprinten)_
 
 _Idéer eller diskussioner som är viktiga men inte passar i detta möte_
 
-- [Punkt 1]
-- [Punkt 2]
+- Prata mer om upplägg
+- [Ämne]
 
 ---
 
@@ -147,16 +194,17 @@ _Idéer eller diskussioner som är viktiga men inte passar i detta möte_
 
 ### Siffror
 
-- **Antal user stories i sprinten:** [X]
+- **Antal user stories i sprinten:** [4]
 - **Totalt antal tasks:** [X]
 - **Total estimerad arbetstid:** [X timmar]
 - **Story points planerade:** [X]
 
 ### Sprintens huvudsakliga fokusområden
 
-1. [Område 1, t.ex. "Frontend-utveckling"]
-2. [Område 2, t.ex. "Grundläggande databasstruktur"]
-3. [Område 3, t.ex. "Projektdokumentation"]
+1. GitHub setup och grundstruktur
+2. Frontend utveckling (HTML/CSS/JS)
+3. Backend logik
+4. Dokumentation och setup
 
 ### Fördelning av arbete
 
@@ -170,116 +218,10 @@ _Idéer eller diskussioner som är viktiga men inte passar i detta möte_
 
 ## Nästa Steg - Innan vi lämnar mötet
 
-- [ ] Alla GitHub issues är skapade och tilldelade
-- [ ] GitHub Project board är uppdaterat
+- [x] Alla GitHub issues är skapade och tilldelade
+- [x] GitHub Project board är uppdaterat
 - [ ] Alla vet exakt vad de ska börja med
-- [ ] Första Daily Scrum är inbokad: [Datum, tid, plats/länk]
-- [ ] Alla har tillgång till nödvändiga resurser (repo, dokumentation, etc.)
+- [x] Första Daily Scrum är inbokad: [Datum, tid, plats/länk]
+- [x] Alla har tillgång till nödvändiga resurser (repo, dokumentation, etc.)
 
 ---
-
-# GUIDE FÖR ATT ANVÄNDA DENNA MALL
-
-## Före mötet (minst 1 dag innan)
-
-**Product Owner gör:**
-
-- Prioritera user stories i Product Backlog
-- Se till att stories har tydliga beskrivningar
-- Förbereda att förklara värdet av varje story
-
-**Hela teamet gör:**
-
-- Läs igenom föreslagna user stories
-- Tänk på er tillgänglighet kommande vecka
-- Skriv ner frågor ni har
-
-## Under mötet
-
-**Timeboxing - Håll tiderna!**
-
-- Del 1 (Sprint mål): Max 15 min
-- Del 2 (Kapacitet): Max 10 min
-- Del 3 (Stories & tasks): 30-45 min
-- **TOTALT: Max 60-70 minuter** (basera detta på er erfarenhet också)
-
-**Roller:**
-
-- **En person för anteckningar** (rotera denna roll varje sprint)
-- **Product Owner** förklarar värdet av stories (ni själva agerar product owner för denna kurs)
-- **Alla deltar** i estimering och uppdelning i tasks
-
-## Efter mötet
-
-**Samma dag:**
-
-- [ ] Anteckningarna delas med alla (länk i er kommunikationskanal)
-- [ ] Alla GitHub issues skapas
-- [ ] GitHub Project board uppdateras
-- [ ] Första daily scrum påminnelse skickas
-
----
-
-# VANLIGA MISSTAG ATT UNDVIKA
-
-## 1. Vaga beskrivningar
-
-**DÅLIGT:**
-
-- "Jobba med frontend"
-- "Fixa databasen"
-- "Göra klart designen"
-
-**BRA:**
-
-- "Skapa HTML-struktur för inloggningsformulär med email och lösenord"
-- "Implementera funktion för att spara användare i databasen"
-- "Skapa CSS-styling för header och navigation enligt skissen"
-
-## 2. För stora tasks
-
-**DÅLIGT:**
-
-- "Bygga hela användarhanteringssystemet" (20+ timmar)
-
-**BRA:**
-
-- "Skapa registreringsformulär" (2-3 timmar)
-- "Implementera lösenordsvalidering" (2 timmar)
-- "Skapa databaskoppling för users" (3 timmar)
-
-## 3. Ingen tydlig ägare
-
-**DÅLIGT:**
-
-- "Någon måste fixa det där"
-- "Vi kollar på det"
-
-**BRA:**
-
-- "Sara implementerar, Johan gör code review"
-- "Maria ansvarar, frågar Lisa om hjälp vid behov"
-
-## 4. Orealistisk planering
-
-**VARNING:** Eftersom vi är nybörjare i programmering och har sprintar på 1-vecka:
-
-- Planera MINDRE än ni tror ni hinner
-- Räkna med att saker tar dubbelt så lång tid som estimerat
-
----
-
-# CHECKLISTA: Är vår planering bra?
-
-Gå igenom detta innan ni avslutar mötet:
-
-- [ ] Har vi ett tydligt sprint mål som alla förstår?
-- [ ] Är alla user stories uppdelade i tasks på max 2-4 timmar?
-- [ ] Har varje task en namngiven ansvarig?
-- [ ] Har vi skapat GitHub issues för allt?
-- [ ] Är vår totala estimering realistisk för vår kapacitet?
-- [ ] Vet alla vad de ska börja med imorgon?
-- [ ] Har vi identifierat risker och beslutat om åtgärder?
-- [ ] Är alla action items tilldelade med deadlines?
-
-Om ni kan svara JA på allt ovan - bra jobbat!
