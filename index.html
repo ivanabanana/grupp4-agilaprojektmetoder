@@ -31,6 +31,56 @@
     </section>
 
     <!-- QUIZ-SIDA -->
+    <section id="quiz-screen" class="screen">
+        <div class="container">
+            <!-- Progress Bar/Indicator -->
+             <div class="quiz-progress">
+                <span class="progress-text">Fråga 1 av 10</span> <!-- Hur lägger jag till <> smidigast här för att få en annan färg på den texten? -->
+                <div class="score-display">Score: <span id="current-score">0</span></div>
+            </div>
+
+            <!-- Question Box -->
+            <div class="question-box">
+                <!-- Kategori -->
+                <div class="category-tag">Web Development</div>
+
+                <!-- Fråga -->
+                <!-- Hämta array med frågor från js eller backend? -->
+                <h2 id="question-text">Här ska frågan sättas in.. </h2>
+
+                <!-- Svarsalternativ -->
+                <div id="options-container" class="options">
+                    <!-- Hämta array med svarsalternativ från js eller backend? -->
+                    <!-- Behöver vi lägga in buttons här eller gör vi det med js? -->
+                </div>
+
+                <!-- Förklaringsbox (dolt till att börja med) -->
+                <div id="explanation-box" class="explanation-box hidden">
+                    <p id="explanation-text"></p>
+                </div>
+            </div>
+
+            <!-- Progress dots -->
+            <div class="progress-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Nästa fråga - knapp -->
+            <!-- Visas efter svar (hidden class)? -->
+            <!-- La även btn och btn-primary här för återkommande stilar -->
+            <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
+            <button id="next-btn" class="btn btn-primary hidden">Nästa fråga</button>
+        </div>
+    </section>
 
     <!-- RESULTAT-SIDA -->
   </body>
