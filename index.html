@@ -12,7 +12,7 @@
       <div class="container">
         <!-- <> Logo -->
         <div class="quiz-icon">
-          <span class="code-brackets">&lt; &gt;</span>
+          <span class="brackets-large">&lt; &gt;</span>
         </div>
 
         <!-- Rubrik & Beskrivning -->
@@ -31,11 +31,14 @@
     </section>
 
     <!-- QUIZ-SIDA -->
+    <!-- Skrev in class "screen" och "container" för återkommande stilar -->
+    <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
     <section id="quiz-screen" class="screen">
         <div class="container">
             <!-- Progress Bar/Indicator -->
              <div class="quiz-progress">
-                <span class="progress-text">Fråga 1 av 10</span> <!-- Hur lägger jag till <> smidigast här för att få en annan färg på den texten? -->
+                <span class="brackets-small">&lt; &gt;</span> <!-- Hur lägger vi till <> smidigast här för att få en annan färg på den texten? -->
+                <span class="progress-text">Fråga 1 av 10</span>
                 <div class="score-display">Score: <span id="current-score">0</span></div>
             </div>
 
@@ -61,6 +64,7 @@
             </div>
 
             <!-- Progress dots -->
+            <!-- Active class som automatiskt läggs på nästa ju längre in i quizet man kommer? -->
             <div class="progress-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -83,5 +87,47 @@
     </section>
 
     <!-- RESULTAT-SIDA -->
+    <!-- Skrev in class "screen" och "container" för återkommande stilar -->
+    <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
+    <section id="result-screen" class="screen">
+        <div class="container">
+            <!-- Result box-->
+            <div class="result-box">
+                <!-- Success message -->
+                <h2 id="result-title">Bra jobbat!</h2>
+
+                <!-- High score badge -->
+                <div class="badge">New High Score!</div>
+
+                <!-- Score display -->
+                <div class="final-score">
+                    <span id="score-number">5</span>/<span id="total-questions">10</span>
+                </div>
+                <p>Frågor Rätt</p>
+
+                <!-- Play again button -->
+                <!-- Skrev in btn btn-primary som class namn för återkommande stilar -->
+                <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
+                <button id="play-again-btn" class="btn btn-primary">
+                    <span class="icon">↻</span> Spela igen
+                </button>
+            </div>
+
+            <!-- High Scores Section -->
+            <!-- Behöver hjälp med denna, vet inte hur vi lägger upp den på bästa sätt? -->
+            <div class="high-scores-box">
+                <h3><span class="brackets-small">&lt; &gt;</span> High Scores</h3>
+                <div class="scores-list">
+                    <div>
+                        <!-- Lägger vi in högsta score här med typ rank? -->
+                    </div>
+                    <div>
+                        <!-- Och sen nästa i rank? osv.. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
   </body>
 </html>
