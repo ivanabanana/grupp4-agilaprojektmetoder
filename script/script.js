@@ -19,3 +19,13 @@ function startQuiz() {
 //knappfunktion
 startBtn.addEventListener('click', startQuiz);
 
+import { questions } from './questions.js';
+
+
+//funktion för att hämta frågor (Sanel)
+const getQuestions = () => {
+    return questions;
+}
+
+console.log(getQuestions());
+
