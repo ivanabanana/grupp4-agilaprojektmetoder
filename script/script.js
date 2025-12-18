@@ -29,3 +29,14 @@ const getQuestions = () => {
 
 console.log(getQuestions());
 
+
+//här anropar vi poänglogiken (Sanel)
+import { updateScore } from './score.js';
+
+function handleUserAnswer(userSelectedCorrect) {
+    const newState = updateScore(userSelectedCorrect);
+
+    console.log("Poäng:", newState.score);
+    console.log("Streak:", newState.streak);
+}
+
