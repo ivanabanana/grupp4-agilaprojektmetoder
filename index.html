@@ -121,15 +121,28 @@
         </div>
 
         <!-- High Scores Section -->
-        <!-- Behöver hjälp med denna, vet inte hur vi lägger upp den på bästa sätt? -->
+        <!-- Vi behöver göra en function för att uppdatera high scores -->
+        <!-- Och även en function för att visa highscores (som vi visar här med hjälp av scores-list och innerHTML i js) -->
         <div class="high-scores-box">
           <h3><span class="brackets-small">&lt; &gt;</span> High Scores</h3>
           <div class="scores-list">
-            <div>
-              <!-- Lägger vi in högsta score här med typ rank? -->
+            <!-- Lägger class score-item och rank-number på alla och sen rank 1, 2, 3 så vi kan separera dem -->
+            <!-- Första plats -->
+            <div class="score-item rank-1">
+              <span class="rank-number">1</span>
+              <span class="player-score">9/10</span>
             </div>
-            <div>
-              <!-- Och sen nästa i rank? osv.. -->
+
+            <!-- Andra plats-->
+            <div class="score-item rank-2">
+              <span class="rank-number">2</span>
+              <span class="player-score">7/10</span>
+            </div>
+
+            <!-- Tredje plats -->
+            <div class="score-item rank-3">
+              <span class="rank-number">3</span>
+              <span class="player-score">5/10</span>
             </div>
           </div>
         </div>
