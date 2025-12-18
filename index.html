@@ -34,100 +34,108 @@
     <!-- Skrev in class "screen" och "container" för återkommande stilar -->
     <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
     <section id="quiz-screen" class="screen">
-        <div class="container">
-            <!-- Progress Bar/Indicator -->
-             <div class="quiz-progress">
-                <span class="brackets-small">&lt; &gt;</span> <!-- Hur lägger vi till <> smidigast här för att få en annan färg på den texten? -->
-                <span class="progress-text">Fråga 1 av 10</span>
-                <div class="score-display">Score: <span id="current-score">0</span></div>
-            </div>
-
-            <!-- Question Box -->
-            <div class="question-box">
-                <!-- Kategori -->
-                <div class="category-tag">Web Development</div>
-
-                <!-- Fråga -->
-                <!-- Hämta array med frågor från js eller backend? -->
-                <h2 id="question-text">Här ska frågan sättas in.. </h2>
-
-                <!-- Svarsalternativ -->
-                <div id="options-container" class="options">
-                    <!-- Hämta array med svarsalternativ från js eller backend? -->
-                    <!-- Behöver vi lägga in buttons här eller gör vi det med js? -->
-                </div>
-
-                <!-- Förklaringsbox (dolt till att börja med) -->
-                <div id="explanation-box" class="explanation-box hidden">
-                    <p id="explanation-text"></p>
-                </div>
-            </div>
-
-            <!-- Progress dots -->
-            <!-- Active class som automatiskt läggs på nästa ju längre in i quizet man kommer? -->
-            <div class="progress-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-
-            <!-- Nästa fråga - knapp -->
-            <!-- Visas efter svar (hidden class)? -->
-            <!-- La även btn och btn-primary här för återkommande stilar -->
-            <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
-            <button id="next-btn" class="btn btn-primary hidden">Nästa fråga</button>
+      <div class="container">
+        <!-- Progress Bar/Indicator -->
+        <div class="quiz-progress">
+          <span class="brackets-small">&lt; &gt;</span>
+          <!-- Hur lägger vi till <> smidigast här för att få en annan färg på den texten? -->
+          <span class="progress-text">Fråga 1 av 10</span>
+          <div class="score-display">
+            Score: <span id="current-score">0</span>
+          </div>
         </div>
+
+        <!-- Question Box -->
+        <div class="question-box">
+          <!-- Kategori -->
+          <div class="category-tag">Web Development</div>
+
+          <!-- Fråga -->
+          <!-- Hämta array med frågor från js eller backend? -->
+          <h2 id="question-text">Här ska frågan sättas in..</h2>
+
+          <!-- Svarsalternativ -->
+          <div id="options-container" class="options">
+            <!-- Hämta array med svarsalternativ från js eller backend? -->
+            <!-- Behöver vi lägga in buttons här eller gör vi det med js? -->
+          </div>
+
+          <!-- Förklaringsbox (dolt till att börja med) -->
+          <div id="explanation-box" class="explanation-box hidden">
+            <p id="explanation-text"></p>
+          </div>
+        </div>
+
+        <!-- Progress dots -->
+        <!-- Active class som automatiskt läggs på nästa ju längre in i quizet man kommer? -->
+        <div class="progress-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <!-- Nästa fråga - knapp -->
+        <!-- Visas efter svar (hidden class)? -->
+        <!-- La även btn och btn-primary här för återkommande stilar -->
+        <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
+        <button id="next-btn" class="btn btn-primary hidden">
+          Nästa fråga
+        </button>
+      </div>
     </section>
 
     <!-- RESULTAT-SIDA -->
     <!-- Skrev in class "screen" och "container" för återkommande stilar -->
     <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
     <section id="result-screen" class="screen">
-        <div class="container">
-            <!-- Result box-->
-            <div class="result-box">
-                <!-- Success message -->
-                <h2 id="result-title">Bra jobbat!</h2>
+      <div class="container">
+        <!-- Result box-->
+        <div class="result-box">
+          <!-- Success message -->
+          <h2 id="result-title">Bra jobbat!</h2>
 
-                <!-- High score badge -->
-                <div class="badge">New High Score!</div>
+          <!-- High score badge -->
+          <div class="badge">New High Score!</div>
 
-                <!-- Score display -->
-                <div class="final-score">
-                    <span id="score-number">5</span>/<span id="total-questions">10</span>
-                </div>
-                <p>Frågor Rätt</p>
+          <!-- Score display -->
+          <div class="final-score">
+            <span id="score-number">5</span>/<span id="total-questions"
+              >10</span
+            >
+          </div>
+          <p>Frågor Rätt</p>
 
-                <!-- Play again button -->
-                <!-- Skrev in btn btn-primary som class namn för återkommande stilar -->
-                <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
-                <button id="play-again-btn" class="btn btn-primary">
-                    <span class="icon">↻</span> Spela igen
-                </button>
-            </div>
-
-            <!-- High Scores Section -->
-            <!-- Behöver hjälp med denna, vet inte hur vi lägger upp den på bästa sätt? -->
-            <div class="high-scores-box">
-                <h3><span class="brackets-small">&lt; &gt;</span> High Scores</h3>
-                <div class="scores-list">
-                    <div>
-                        <!-- Lägger vi in högsta score här med typ rank? -->
-                    </div>
-                    <div>
-                        <!-- Och sen nästa i rank? osv.. -->
-                    </div>
-                </div>
-            </div>
+          <!-- Play again button -->
+          <!-- Skrev in btn btn-primary som class namn för återkommande stilar -->
+          <!-- Den som sitter med CSS sen kan såklart välja/ändra efter tycke! -->
+          <button id="play-again-btn" class="btn btn-primary">
+            <span class="icon">↻</span> Spela igen
+          </button>
         </div>
+
+        <!-- High Scores Section -->
+        <!-- Behöver hjälp med denna, vet inte hur vi lägger upp den på bästa sätt? -->
+        <div class="high-scores-box">
+          <h3><span class="brackets-small">&lt; &gt;</span> High Scores</h3>
+          <div class="scores-list">
+            <div>
+              <!-- Lägger vi in högsta score här med typ rank? -->
+            </div>
+            <div>
+              <!-- Och sen nästa i rank? osv.. -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
+    <script src="script/script.js"></script>
   </body>
 </html>
