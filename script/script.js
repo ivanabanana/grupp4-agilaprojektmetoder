@@ -1,7 +1,7 @@
 const startBtn = document.getElementById('start-btn')
 const startScreen = document.getElementById('start-screen')
 const quizScreen = document.getElementById('quiz-screen')
-const currentScore = document.getElementById('currentScore')
+const currentScore = document.getElementById('current-score')
 
 function startQuiz() {
     //göm startsida
@@ -11,9 +11,10 @@ function startQuiz() {
     //visa quizsida
     quizScreen.classList.remove('screen');
     quizScreen.classList.add('screen-active');
-}
 
-currentScore.textContent = '0';
+    //poängen nollställs
+    currentScore.textContent = '0';
+}
 
 //knappfunktion
 startBtn.addEventListener('click', startQuiz);
