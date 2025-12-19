@@ -40,3 +40,7 @@ function handleUserAnswer(userSelectedCorrect) {
     console.log("Streak:", newState.streak);
 }
 
+//hämta resultatsidan
+import { initResult } from './result.js';
+
+initResult();
