@@ -3,6 +3,9 @@ const startScreen = document.getElementById('start-screen')
 const quizScreen = document.getElementById('quiz-screen')
 const currentScore = document.getElementById('current-score')
 
+// Lägger till import för fråge-funktionerna
+import { displayQuestion, resetQuiz, initQuestionHandlers } from './questionhandler.js'
+
 function startQuiz() {
     //göm startsida
     startScreen.classList.remove('screen-active');
@@ -14,6 +17,10 @@ function startQuiz() {
 
     //poängen nollställs
     currentScore.textContent = '0';
+
+    // Återställ frågeindex och visa första frågan (Maryam)
+    resetQuiz(); // Hämtar funktionen från questionhandlers
+    displayQuestion(); // Hämtar funktionen från questionhandlers
 }
 
 //knappfunktion
@@ -40,3 +47,23 @@ function handleUserAnswer(userSelectedCorrect) {
     console.log("Streak:", newState.streak);
 }
 
+// Progress bar (Maryam)
+import { currentQuestionIndex } from './questionhandler.js';
+
+function updateProgressbar() {
+    const dots = document.querySelectorAll('.dot');
+    
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    if (dots[currentQuestionIndex]) {
+        dots[currentQuestionIndex].classList.add('active');
+    }
+    
+    console.log(`Progress dots uppdaterad! Fråga ${currentQuestionIndex + 1}`);
+}
+
+export { updateProgressbar };
+
+// Initialiserar allt när sidan laddas
+// Sätter upp event listener för "Nästa fråga"
+initQuestionHandlers();
