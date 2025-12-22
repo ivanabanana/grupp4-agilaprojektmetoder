@@ -22,7 +22,14 @@ function startQuiz() {
 //knappfunktion
 startBtn.addEventListener('click', startQuiz);
 
+import { initStart } from './start.js';
 import { questions } from './questions.js';
+import { updateScore } from './score.js';
+// Lägger till import för fråge-funktionerna
+import { displayQuestion, resetQuiz, initQuestionHandlers, currentQuestionIndex } from './questionhandler.js'
+
+//initiera startfunktionen
+initStart()
 
 
 //funktion för att hämta frågor (Sanel)
@@ -34,7 +41,6 @@ console.log(getQuestions());
 
 
 //här anropar vi poänglogiken (Sanel)
-import { updateScore } from './score.js';
 
 function handleUserAnswer(userSelectedCorrect) {
     const newState = updateScore(userSelectedCorrect);
