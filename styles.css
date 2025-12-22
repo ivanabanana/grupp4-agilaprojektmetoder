@@ -91,3 +91,8 @@ body {
 .screen-active {
     display: block;
 }
+
+/* DÖLJER "Nästa fråga"-knapp innan användaren klickat på något svarsalternativ // Maryam */
+.hidden {
+    display: none;
+}

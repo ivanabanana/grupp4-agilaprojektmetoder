@@ -3,8 +3,11 @@ const startScreen = document.getElementById('start-screen')
 const quizScreen = document.getElementById('quiz-screen')
 const currentScore = document.getElementById('current-score')
 
-// Importerar från questionHandler
-import { displayQuestion, resetQuiz, initQuestionHandlers } from './questionhandler.js';
+// IMPORTS, Flyttade alla hit upp istället / Maryam
+import { initStart } from './start.js';
+import { questions } from './questions.js';
+import { updateScore } from './score.js';
+import { displayQuestion, resetQuiz, initQuestionHandlers, currentQuestionIndex } from './questionhandler.js'; // Maryam
 
 function startQuiz() {
     //göm startsida
@@ -17,19 +20,18 @@ function startQuiz() {
 
     //poängen nollställs
     currentScore.textContent = '0';
+
+    // MARYAM: Återställer quiz och visar första frågan
+    resetQuiz();
+    displayQuestion();
 }
 
 //knappfunktion
 startBtn.addEventListener('click', startQuiz);
 
-import { initStart } from './start.js';
-import { questions } from './questions.js';
-import { updateScore } from './score.js';
-// Lägger till import för fråge-funktionerna
-import { displayQuestion, resetQuiz, initQuestionHandlers, currentQuestionIndex } from './questionhandler.js'
-
 //initiera startfunktionen
 initStart()
+initQuestionHandlers(); // MARYAM: Sätter upp click-events för svarsalternativen och "Nästa fråga"
 
 
 //funktion för att hämta frågor (Sanel)
