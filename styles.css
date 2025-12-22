@@ -1,3 +1,89 @@
+/* ==================== ROOT VARIABLAR ==================== */
+
+:root {
+    /* Färger - Huvudfärger */
+    --color-background: #1a1d2e;
+    --color-background-light: #242840;
+    --color-background-dark: #13152a;
+
+    /* Primärfärger */
+    --color-primary: #6366f1;
+    --color-primary-hover: #5558e3;
+    --color-primary-dark: #4f46e5;
+
+    /* Status färger */
+    --color-success: #22c55e;
+    --color-success-dark: #16a34a;
+    --color-error: #ef4444;
+    --color-error-dark: #dc2626;
+    --color-warning: #eab308;
+
+    /* Text färger */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #9ca3af;
+    --color-text-muted: #6b7280;
+
+    /* Border färger */
+    --color-border: #3d4264;
+    --color-border-hover: #5558e3;
+
+    /* Font storlekar */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; /* Gör så det fungerar på alla enheter */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 3rem;
+
+    /* Olika avstånd storlekar */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Rundade hörn storlekar */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Transitions (KAN TAS BORT ELLER ÄNDRAS OM VI VILL) */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
+
+    /* Olika skugg storlekar */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
 .screen {
     display: none;
 }
