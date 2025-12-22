@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz app</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/0334797817.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- STARTSIDA -->
@@ -12,12 +17,15 @@
       <div class="container">
         <!-- <> Logo -->
         <div class="quiz-icon">
-          <span class="brackets-large">&lt; &gt;</span>
+          <i class="fa-solid fa-code"></i>
         </div>
 
         <!-- Rubrik & Beskrivning -->
         <div class="quiz-header">
-          <h1>Programming - Quiz</h1>
+          <h1>
+            <i class="fa-solid fa-brain"></i>
+            Programming - Quiz
+          </h1>
           <p class="quiz-description">
             Testa på dina programmeringskunskaper med detta quiz!
           </p>
@@ -37,7 +45,7 @@
       <div class="container">
         <!-- Progress Bar/Indicator -->
         <div class="quiz-progress">
-          <span class="brackets-small">&lt; &gt;</span>
+          <i class="fa-solid fa-code"></i>
           <!-- Hur lägger vi till <> smidigast här för att få en annan färg på den texten? -->
           <span class="progress-text">Fråga 1 av 10</span>
           <div class="score-display">
@@ -126,7 +134,10 @@
         <!-- Vi behöver göra en function för att uppdatera high scores -->
         <!-- Och även en function för att visa highscores (som vi visar här med hjälp av scores-list och innerHTML i js) -->
         <div class="high-scores-box">
-          <h3><span class="brackets-small">&lt; &gt;</span> High Scores</h3>
+          <h3>
+            <i class="fa-solid fa-code"></i>
+            High Scores
+          </h3>
           <div class="scores-list">
             <!-- Lägger class score-item och rank-number på alla och sen rank 1, 2, 3 så vi kan separera dem -->
             <!-- Första plats -->
@@ -151,6 +162,6 @@
       </div>
     </section>
 
-    <script src="script/script.js"></script>
+    <script type="module" src="script/script.js"></script>
   </body>
 </html>
