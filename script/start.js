@@ -1,3 +1,5 @@
+import { displayQuestion, resetQuiz } from './questionhandler.js'; // Maryam
+
 export function initStart() {
 const startBtn = document.getElementById('start-btn')
 const startScreen = document.getElementById('start-screen')
@@ -15,6 +17,10 @@ function startQuiz() {
 
     //poängen nollställs
     currentScore.textContent = '0';
+
+    // MARYAM: Återställer quiz och visar första frågan
+    resetQuiz();
+    displayQuestion();
 }
 
 //knappfunktion
