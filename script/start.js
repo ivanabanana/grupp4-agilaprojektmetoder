@@ -1,4 +1,4 @@
-import { displayQuestion, resetQuiz } from './questionhandler.js'; // Maryam
+import { displayQuestion, resetQuiz } from './questionHandler.js'; // Maryam
 
 export function initStart() {
 const startBtn = document.getElementById('start-btn')

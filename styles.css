@@ -89,10 +89,20 @@ body {
 }
 
 .screen-active {
-    display: block;
+    display: block !important;
 }
 
 /* DÖLJER "Nästa fråga"-knapp innan användaren klickat på något svarsalternativ // Maryam */
 .hidden {
     display: none;
+}
+
+.option-btn.correct {
+    background-color: #2ecc71 !important; /* Grön färg */
+    color: white !important;
+}
+
+.option-btn.wrong {
+    background-color: #e74c3c !important; /* Röd färg */
+    color: white !important;
 }
