@@ -10,6 +10,16 @@ function getCurrentQuestion() {
     return questions[currentQuestionIndex];
 }
 
+export function goToNextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        const scoreToDisplay = localStorage.getItem('quiz_current_score') || 0;
+        showResultScreen(scoreToDisplay);
+    }
+}
+
 export function displayQuestion() {
     const currentQuestion = getCurrentQuestion();
     const questionText = document.getElementById('question-text');
@@ -45,7 +55,7 @@ export function handleAnswerClick(selectedIndex) {
     const updatedState = updateScore(isCorrect);
 
     if (updatedState.streak === 3) {
-        alert("Snyggt, du är on fire! 🔥 ");
+        showToast("Snyggt, du är on fire! 🔥");
     }
 
 
@@ -72,17 +82,9 @@ export function handleAnswerClick(selectedIndex) {
     nextBtn.classList.remove('hidden');
 }
 
-export function goToNextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        displayQuestion();
-    } else {
-        showResultScreen();
-    }
-}
-
 export function resetQuiz() {
     currentQuestionIndex = 0;
+    resetGame();
     }
 
 export function initQuestionHandlers() {
@@ -95,20 +97,32 @@ export function initQuestionHandlers() {
     });
 }
 
-function showResultScreen() {
-    document.getElementById('quiz-screen').classList.remove('screen-active');
-    document.getElementById('quiz-screen').style.display = 'none';
-
+function showResultScreen(score) {
+    const quizScreen = document.getElementById('quiz-screen');
     const resultScreen = document.getElementById('result-screen');
-    resultScreen.classList.add('screen-active');
-    resultScreen.style.display = 'block';
+    const finalScoreElement = document.getElementById('score-number');
+    const resultTitle = document.getElementById('result-title');
 
-    const finalScore = localStorage.getItem('quiz_current_score') || 0;
-    const scoreNumberElem = document.getElementById('score-number');
-    
-    if (scoreNumberElem) {
-        scoreNumberElem.textContent = finalScore;
+    if (resultTitle) {
+        resultTitle.textContent = score >= 7 ? "Grymt jobbat!" : "Bra kämpat!";
     }
 
-    console.log("Visar resultat: " + finalScore + " poäng.");
+    if (finalScoreElement) {
+        finalScoreElement.textContent = score;
+    }
+
+    quizScreen.classList.remove('screen-active');
+    resultScreen.classList.add('screen-active');
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.remove('hidden');
+
+    setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 3000);
 }

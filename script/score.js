@@ -8,13 +8,16 @@ let gameState = {
 };
 
 export const updateScore = (isCorrect) => {
-    if (isCorrect) {
+    if (!isCorrect) {
+        gameState.streak = 0;
+    } else {
         gameState.streak++;
         gameState.correctAnswersCount++;
-        const points = gameState.streak > 3 ? 20 : 10;
+    }
+
+    const points = (isCorrect && gameState.streak >= 3) ? 20 : 10;
+    if (isCorrect) {
         gameState.score += points;
-    } else {
-        gameState.streak = 0;
     }
 
     saveToLocalStorage();
@@ -42,6 +45,7 @@ export const resetGame = () => {
     gameState.streak = 0;
     gameState.correctAnswersCount = 0;
     localStorage.removeItem('quiz_current_score');
+    localStorage.removeItem('quiz_streak');
 };
 
 
