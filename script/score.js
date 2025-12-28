@@ -3,12 +3,14 @@ spara poängen samt en streak om man svarar rätt på flera frågor i rad. Sanel
 let gameState = {
     score: 0,
     streak: 0,
+    correctAnswers: 0,
     highScore: localStorage.getItem('quiz_highscore') || 0
 };
 
 export const updateScore = (isCorrect) => {
     if (isCorrect) {
         gameState.streak++;
+        gameState.correctAnswers++;
         const points = gameState.streak > 3 ? 20 : 10;
         gameState.score += points;
     } else {
@@ -31,6 +33,8 @@ const saveToLocalStorage = () => {
 export const resetGame = () => {
     gameState.score = 0;
     gameState.streak = 0;
+    gameState.correctAnswers = 0;
 
 };
 
+export { gameState };
