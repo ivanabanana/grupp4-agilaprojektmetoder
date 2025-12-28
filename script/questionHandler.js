@@ -1,6 +1,7 @@
 // Denna fil hanterar alla funktioner för att visa frågor och svarsalternativ
 import { questions } from './questions.js';
 import { updateProgressbar } from './progress-bar.js';
+import { showResult } from './result.js'; //Alvina
 
 let currentQuestionIndex = 0;
 
@@ -113,7 +114,7 @@ function goToNextQuestion() {
         displayQuestion();
     } else {
         console.log("Quizet är slut, alla frågor visade.");
-        alert("Quiz slut! Alla 10 frågor är besvarade");
+        showResult();
     }
 }
 

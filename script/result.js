@@ -1,14 +1,20 @@
 //resultatssida
 
 export function initResult() {
-    const resultScreen = document.getElementById('result-screen')
-    const quizScreen = document.getElementById('quiz-screen')
-    const scoreNumber = document.getElementById('score-number')
-    const totalQuestions = document.getElementById('total-questions')
-    const badge = document.querySelector('.badge')
-    const playAgainBtn = document.getElementById('play-again-btn')
+    const playAgainBtn = document.getElementById('play-again-btn');
 
-    function quizResult() {
+    playAgainBtn.addEventListener('click', function () {
+        location.reload()
+    });
+}
+
+export function showResult() {
+    const resultScreen = document.getElementById('result-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const scoreNumber = document.getElementById('score-number');
+    const totalQuestions = document.getElementById('total-questions');
+    const badge = document.querySelector('.badge');
+
         //göm quizsida
         quizScreen.classList.remove('screen-active');
         quizScreen.classList.add('screen');
@@ -29,9 +35,3 @@ export function initResult() {
         }
 
     }
-
-    //knappfunktion för att gå tillbaka till startsida
-    playAgainBtn.addEventListener('click', function () {
-        location.reload();
-    });
-}
