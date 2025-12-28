@@ -1,5 +1,5 @@
 import { gameState, resetGame } from './score.js';
-import { resetQuiz } from './questionhandler';
+import { resetQuiz } from './questionhandler.js';
 
 export function initResult() {
     const playAgainBtn = document.getElementById('play-again-btn');
@@ -8,6 +8,18 @@ export function initResult() {
 
         resetQuiz();
         resetGame();
+
+        const resultScreen = document.getElementById('result-screen');
+       resultScreen.className = 'screen';
+
+        const quizScreen = document.getElementById('quiz-screen');
+        quizScreen.className = 'screen';
+
+        const startScreen = document.getElementById('start-screen');
+        startScreen.className = 'screen-active';
+
+        console.log("startsidan ska nu visas");
+        console.log("startscreen classes:", startScreen.className);
     });
 }
 
