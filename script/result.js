@@ -1,10 +1,12 @@
-//resultatssida
+import { resetGame } from './score.js';
+import { resetQuiz } from './questionhandler';
 
 export function initResult() {
     const playAgainBtn = document.getElementById('play-again-btn');
 
     playAgainBtn.addEventListener('click', function () {
-        location.reload()
+
+        resetQuiz();
     });
 }
 
