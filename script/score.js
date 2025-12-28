@@ -31,6 +31,6 @@ const saveToLocalStorage = () => {
 export const resetGame = () => {
     gameState.score = 0;
     gameState.streak = 0;
-    localStorage.removeItem('quiz_current_score');
+
 };
 

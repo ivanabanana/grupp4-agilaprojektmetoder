@@ -7,6 +7,7 @@ export function initResult() {
     playAgainBtn.addEventListener('click', function () {
 
         resetQuiz();
+        resetGame();
     });
 }
 
