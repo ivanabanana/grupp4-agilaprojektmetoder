@@ -1,5 +1,5 @@
 import { gameState, resetGame } from './score.js';
-import { resetQuiz } from './questionhandler.js';
+import { resetQuiz } from './questionHandler.js';
 
 export function initResult() {
     const playAgainBtn = document.getElementById('play-again-btn');
@@ -39,7 +39,7 @@ export function showResult() {
         resultScreen.classList.add('screen-active');
 
         //visa slutpoäng
-        scoreNumber.textContent = gameState.correctAnswers;
+        scoreNumber.textContent = gameState.correctAnswersCount;
         totalQuestions.textContent = 10;
 
         //visa highscore ifall det är ett nytt rekord

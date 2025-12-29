@@ -89,11 +89,48 @@ body {
 }
 
 .screen-active {
-    display: block;
+    display: block !important;
 }
 
 /* DÖLJER "Nästa fråga"-knapp innan användaren klickat på något svarsalternativ // Maryam */
 .hidden {
     display: none;
+}
+
+.option-btn.correct {
+    background-color: #2ecc71 !important; /* Grön färg */
+    color: white !important;
+}
+
+.option-btn.wrong {
+    background-color: #e74c3c !important; /* Röd färg */
+    color: white !important;
+}
+
+.screen {
+    display: none;
+}
+
+.screen-active {
+    display: block !important;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.toast.hidden {
+    display: none;
+    opacity: 0;
 }
 
