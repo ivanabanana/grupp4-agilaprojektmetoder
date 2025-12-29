@@ -1,0 +1,579 @@
+/* ==================== ROOT VARIABLAR ==================== */
+
+:root {
+  /* Färger - Huvudfärger */
+  --color-background: radial-gradient(
+    circle at center,
+    #242840 0%,
+    #1a1d2e 60%,
+    #13152a 100%
+  );
+  --color-background-light: #242840;
+  --color-background-dark: #13152a;
+
+  /* Primärfärger */
+  --color-primary: #6366f1;
+  --color-primary-hover: #5558e3;
+  --color-primary-dark: #4f46e5;
+
+  /* Status färger */
+  --color-success: #22c55e;
+  --color-success-dark: #16a34a;
+  --color-error: #ef4444;
+  --color-error-dark: #dc2626;
+  --color-warning: #eab308;
+
+  /* Text färger */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+
+  /* Border färger */
+  --color-border: #3d4264;
+  --color-border-hover: #5558e3;
+
+  /* Font storlekar */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  /* Gör så det fungerar på alla enheter */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 3rem;
+
+  /* Olika avstånd storlekar */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Rundade hörn storlekar */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Transitions (KAN TAS BORT ELLER ÄNDRAS OM VI VILL) */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Olika skugg storlekar */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+/*Fixar start-skärmen så att det passar in på Figma-designen / Ivana*/
+
+#start-screen .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.quiz-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.quiz-header {
+  text-align: center;
+}
+
+.quiz-header i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.quiz-header h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.quiz-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+}
+
+.screen {
+  display: none;
+}
+
+.screen-active {
+  display: block !important;
+}
+
+/* DÖLJER "Nästa fråga"-knapp innan användaren klickat på något svarsalternativ // Maryam */
+.hidden {
+  display: none;
+}
+
+.screen {
+  display: none;
+}
+
+.screen-active {
+  display: block !important;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toast.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* ==================== KNAPP STYLES ==================== */
+
+/* Primära knappar (Starta Quiz, Spela igen, Nästa fråga) */
+.btn {
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-xl);
+
+  line-height: 1.5;
+  width: 348px;
+  border-radius: var(--radius-sm);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Jag döljer nästa fråga för jag la till så att vi auto-advance:ar i quizzet, så som jag hade tänkt i designen. Säg till om ni vill ha tillbaka det gamla! / Ivana */
+#quiz-screen #next-btn {
+  display: none !important;
+}
+
+/* Svarsalternativ knappar */
+.option-btn {
+  width: 100%;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  background-color: var(--color-background-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-background-dark);
+  transform: translateX(5px);
+}
+
+.option-btn:disabled {
+  cursor: not-allowed;
+}
+
+.option-btn.correct {
+  background-color: #22c55e1f !important; /* Grön färg som agerar som opacity */
+  color: white !important;
+  border-color: var(--color-success) !important;
+}
+
+.option-btn.wrong {
+  background-color: #ef44441f !important; /* Röd färg som agerar som opacity */
+  color: white !important;
+  border-color: var(--color-error);
+}
+
+/* Styling för quiz-kort, progress och progress dots så att det matchar in mer på Figma / Ivana */
+
+/* Quiz progress (Den övre raden med progress-text (vilken fråga vi är på) + score) / Ivana */
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.03), var(--shadow-md);
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* För den lilla iconen i quiz-progress */
+.quiz-progress i {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-right: var(--spacing-sm);
+}
+
+.quiz-progress .progress-text {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.quiz-progress .score-display {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Styling för quiz-kortet, category-taggen*/
+.question-box {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 1000px;
+  min-height: 320px;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.03), var(--shadow-lg);
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+.category-tag {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.question-box h2 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: var(--font-size-2xl);
+}
+
+/* Svarsalternativ-knappar */
+.options {
+  margin-top: var(--spacing-md);
+}
+
+.option-btn {
+  padding-left: 68px; /* Lägger till för att lämna plats åt letter-badge, så att det blir lite luftigare */
+}
+
+.option-btn::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(61, 66, 100, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* Letter badges för svarsalternativ (A, B, C, D) så som i Figma */
+.options .option-btn:nth-child(1)::before {
+  content: "A";
+}
+.options .option-btn:nth-child(2)::before {
+  content: "B";
+}
+.options .option-btn:nth-child(3)::before {
+  content: "C";
+}
+.options .option-btn:nth-child(4)::before {
+  content: "D";
+}
+
+/* Progress dots-stepper så som i Figma /Ivana  */
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: calc(var(--spacing-2xl) / 2) 0 0 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 36px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Stil för resultatskärmen - Så nära Figma jag kunde komma / Ivana */
+
+#result-screen .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--spacing-2xl);
+}
+
+.result-box {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.03), var(--shadow-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+#result-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 9999px;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.final-score {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.result-box p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.result-box .btn-primary {
+  margin-top: var(--spacing-lg);
+}
+
+/* High scores-sektionen */
+.high-scores-box {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.03), var(--shadow-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+.high-scores-box h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.high-scores-box i {
+  color: var(--color-primary);
+}
+
+.scores-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.01);
+  text-align: left;
+}
+
+.score-item .rank-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.score-item.rank-1 {
+  background: linear-gradient(
+    90deg,
+    rgba(234, 179, 8, 0.06),
+    rgba(234, 179, 8, 0.02)
+  );
+  border-color: rgba(234, 179, 8, 0.2);
+}
+
+.score-item.rank-1 .rank-number {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+}
+
+.score-item.rank-2,
+.score-item.rank-3 {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.score-item .player-score {
+  flex: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+/* ==================== MOBILANPASSNING ==================== */
+
+/* Tablets och mindre skärmar (max 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-md);
+  }
+
+  .container {
+    max-width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  /* Mindre fontstorlekar på mobil */
+  .btn {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+
+  .option-btn {
+    padding: var(--spacing-md);
+    padding-left: 68px;
+    font-size: var(--font-size-sm);
+  }
+
+  /* Mindre mellanrum mellan knappar */
+  .option-btn {
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+/* Små mobiler (max 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-sm);
+  }
+
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  /* Extra små fontstorlekar */
+  .btn {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .option-btn {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+
+  /* Mindre hover-effekt på mobil */
+  .option-btn:hover:not(:disabled) {
+    transform: translateX(3px);
+  }
+}
