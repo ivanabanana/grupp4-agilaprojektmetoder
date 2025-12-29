@@ -52,8 +52,8 @@ export function handleAnswerClick(selectedIndex) {
 
   const updatedState = updateScore(isCorrect);
 
-  if (updatedState.streak === 3) {
-    showToast("Snyggt, du är on fire! 🔥");
+  if (isCorrect && updatedState.streak === 3) {
+    showToast("Snyggt! 3 rätt i rad!🏆");
   }
 
   const scoreElement = document.getElementById("current-score");
@@ -133,7 +133,7 @@ export function initQuestionHandlers() {
 
   const allButtons = document.querySelectorAll(".option-btn");
   allButtons.forEach((button, index) => {
-    button.addEventListener("click", () => handleAnswerClick(index));
+    button.onclick = () => handleAnswerClick(index);
   });
 }
 

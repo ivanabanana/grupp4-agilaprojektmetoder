@@ -154,7 +154,8 @@ body {
 
 .toast {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
+  bottom: auto;
   left: 50%;
   transform: translateX(-50%);
   background-color: #333;
