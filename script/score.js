@@ -8,6 +8,7 @@ let gameState = {
 };
 
 export const updateScore = (isCorrect) => {
+
     if (!isCorrect) {
         gameState.streak = 0;
     } else {
@@ -46,6 +47,7 @@ export const resetGame = () => {
     gameState.correctAnswersCount = 0;
     localStorage.removeItem('quiz_current_score');
     localStorage.removeItem('quiz_streak');
+
 };
 
-
+export { gameState };

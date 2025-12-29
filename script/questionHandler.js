@@ -1,23 +1,15 @@
 // Denna fil hanterar alla funktioner för att visa frågor och svarsalternativ
 import { questions } from './questions.js';
 import { updateProgressbar } from './progress-bar.js';
+import { showResult } from './result.js'; 
 import { updateScore } from './score.js';
+import { resetGame } from './score.js';
 
 let currentQuestionIndex = 0;
 
 // Funktion för att hämta aktuell fråga
 function getCurrentQuestion() {
     return questions[currentQuestionIndex];
-}
-
-export function goToNextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        displayQuestion();
-    } else {
-        const scoreToDisplay = localStorage.getItem('quiz_current_score') || 0;
-        showResultScreen(scoreToDisplay);
-    }
 }
 
 export function displayQuestion() {
@@ -82,7 +74,30 @@ export function handleAnswerClick(selectedIndex) {
     nextBtn.classList.remove('hidden');
 }
 
+// Funktion som meddelar score.js om svaret var rätt/fel
+function notifyScore(isCorrect) {
+    const event = new CustomEvent('answerSubmitted', { 
+        detail: { isCorrect: isCorrect } 
+    });
+    document.dispatchEvent(event);
+    
+    console.log(`Event skickat till score.js: isCorrect = ${isCorrect}`);
+}
+
+// Function för att gå till nästa fråga
+export function goToNextQuestion() {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        console.log("Quizet är slut, alla frågor visade.");
+        showResult();
+    }
+}
+
 export function resetQuiz() {
+
     currentQuestionIndex = 0;
     resetGame();
     }
@@ -95,24 +110,6 @@ export function initQuestionHandlers() {
     allButtons.forEach((button, index) => {
         button.addEventListener('click', () => handleAnswerClick(index));
     });
-}
-
-function showResultScreen(score) {
-    const quizScreen = document.getElementById('quiz-screen');
-    const resultScreen = document.getElementById('result-screen');
-    const finalScoreElement = document.getElementById('score-number');
-    const resultTitle = document.getElementById('result-title');
-
-    if (resultTitle) {
-        resultTitle.textContent = score >= 7 ? "Grymt jobbat!" : "Bra kämpat!";
-    }
-
-    if (finalScoreElement) {
-        finalScoreElement.textContent = score;
-    }
-
-    quizScreen.classList.remove('screen-active');
-    resultScreen.classList.add('screen-active');
 }
 
 function showToast(message) {
