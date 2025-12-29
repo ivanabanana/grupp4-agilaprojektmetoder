@@ -7,7 +7,7 @@ const currentScore = document.getElementById('current-score')
 import { initStart } from './start.js';
 import { questions } from './questions.js';
 import { updateScore } from './score.js';
-import { initQuestionHandlers, currentQuestionIndex } from './questionhandler.js'; // Maryam
+import { initQuestionHandlers, displayQuestion } from './questionHandler.js'; // Maryam
 
 //initiera startfunktionen
 initStart()
@@ -32,3 +32,4 @@ function handleUserAnswer(userSelectedCorrect) {
 
 // INITIERA question handlers när sidan laddas
 initQuestionHandlers();
+displayQuestion();
