@@ -7,7 +7,8 @@ const currentScore = document.getElementById('current-score')
 import { initStart } from './start.js';
 import { questions } from './questions.js';
 import { updateScore } from './score.js';
-import { initQuestionHandlers, currentQuestionIndex } from './questionhandler.js'; // Maryam
+import { initQuestionHandlers } from './questionHandler.js'; // Maryam
+import { initResult } from './result.js'; // Alvina
 
 //initiera startfunktionen
 initStart()
@@ -29,6 +30,9 @@ function handleUserAnswer(userSelectedCorrect) {
     console.log("Poäng:", newState.score);
     console.log("Streak:", newState.streak);
 }
+
+// initiera resultatfunktion
+initResult();
 
 // INITIERA question handlers när sidan laddas
 initQuestionHandlers();
